@@ -3,7 +3,7 @@
   "info": {
     "description": "Welcome to Product Management System.",
     "version": "1.0.0",
-    "title": "Online Product Management"
+    "title": "Product Management System"
   },
   "tags": [
     {
@@ -22,10 +22,6 @@
       "name": "Categorize",
       "description": "Product categories"
     },
-    {
-      "name": "Price",
-      "description": "Product price"
-    }
   ],
   "schemes": [
     "https",
@@ -62,6 +58,9 @@
         "responses": {
           "405": {
             "description": "Invalid input"
+          },
+          "200": {
+            "description": "Operation successful"
           }
         }
       },
@@ -100,11 +99,14 @@
           },
           "405": {
             "description": "Validation exception"
+          },
+          "200": {
+            "description": "Successful operation"
           }
         }
       }
     },
-    "/Product/findByStatus": {
+    "/Product/Status": {
       "get": {
         "tags": [
           "Product"
@@ -229,6 +231,9 @@
         "responses": {
           "405": {
             "description": "Invalid input"
+          },
+          "200": {
+            "description": "Operation successful"
           }
         }
       },
@@ -265,11 +270,14 @@
           },
           "404": {
             "description": "Product not found"
+          },
+          "200": {
+            "description": "Successful operation"
           }
         }
       }
     },
-    "/Product/{productId}/uploadImage": {
+    "/Product/{productId}/Image": {
       "post": {
         "tags": [
           "Product"
@@ -413,6 +421,9 @@
           },
           "404": {
             "description": "Order not found"
+          },
+          "200": {
+            "description": "Successful operation"
           }
         }
       }
@@ -591,6 +602,9 @@
           },
           "404": {
             "description": "User not found"
+          },
+          "200": {
+            "description": "Successful operation"
           }
         }
       },
@@ -620,6 +634,9 @@
           },
           "404": {
             "description": "User not found"
+          },
+          "200": {
+            "description": "Successful operation"
           }
         }
       }
@@ -702,6 +719,9 @@
         "responses": {
           "405": {
             "description": "Invalid input"
+          },
+          "200": {
+            "description": "Successful operation"
           }
         }
       },
@@ -738,6 +758,9 @@
           },
           "404": {
             "description": "Category not found"
+          },
+          "200": {
+            "description": "Successful operation"
           }
         }
       }
@@ -786,10 +809,10 @@
         }
       }
     },
-    "/Price/{productId}": {
+    "/Product/{productId}/Price": {
       "get": {
         "tags": [
-          "Price"
+          "Product"
         ],
         "summary": "Find price by ID",
         "description": "Returns the product price",
@@ -964,7 +987,7 @@
     "Price": {
       "type": "object",
       "properties": {
-        "id": {
+        "productId": {
           "type": "integer",
           "format": "int64"
         },
